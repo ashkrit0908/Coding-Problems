@@ -10,17 +10,17 @@
  * };
  */
 class Solution {
-    vector<int> createPreOrder (TreeNode* root, vector<int> &ans){
-        if(root == NULL) return ans;
+    void createPreOrder (TreeNode* root, vector<int> &ans){
+        if(root == NULL) return;
         ans.push_back(root->val);
         createPreOrder(root->left,ans);
         createPreOrder(root->right,ans);
-        return ans;
+        return;
     }
 public:
     vector<int> preorderTraversal(TreeNode* root) {
         vector<int> ans;
-        ans = createPreOrder(root, ans);
+        createPreOrder(root, ans);
         return ans;
     }
 };
